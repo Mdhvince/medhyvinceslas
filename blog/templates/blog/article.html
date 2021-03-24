@@ -4,9 +4,11 @@
 
     <main>
         <h2 id="title_article">{{ article.title }}</h2>
+        
 
         <div class="container">
             {{ article.content | safe }}
+            <p class="lead sign"><i>Medhy, on {{ article.publication_date | safe }}</i></p>
         </div>
 
     </main>

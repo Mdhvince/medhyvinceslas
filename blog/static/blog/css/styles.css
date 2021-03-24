@@ -51,6 +51,8 @@ footer{
 .sign{
     color: rgb(185, 182, 182);
     text-align: right;
+    margin-bottom: 80px;
+    /* background-color: red; */
 }
 
 #title_article{
