@@ -1,0 +1,15 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block body %}
+
+    <main>
+        <h2 id="title_article">{{ article.title }}</h2>
+
+        <div class="container">
+            {{ article.content | safe }}
+        </div>
+
+    </main>
+
+
+{% endblock %}

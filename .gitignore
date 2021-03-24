@@ -1,0 +1,5 @@
+*.sqlite
+*/migrations/
+media/
+__pycache__/
+.DS_Store
