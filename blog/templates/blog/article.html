@@ -8,20 +8,34 @@
 
         <div class="container">
             {{ article.content | safe }}
-            <p class="lead sign"><i>{{ article.publication_date|date:"F dS, Y" }}</i></p>
+            <p class="lead sign"><i>Last update - {{ article.publication_date|date:"F dS, Y" }}</i></p>
         </div>
-
-        <div class="container reviews">
-            {% for review in reviews %}
-                <h5>{{ review.title_review }}</h5>
-                {{review.notation}}
-                <p class="text-muted"><i>@{{ review.author }} on {{ review.date_review|date:"F dS, Y" }}</i></p>
-                <p class="lead"><i>{{ review.comment }}</i></p>
-            {% endfor %}
-        </div>
-
-
     </main>
 
+    <div class="container reviews">
+        {% for review in reviews %}
+            <hr>
+            <h5>{{ review.title_review }}</h5>
+            {{review.notation}}
+            <p class="text-muted"><i>@{{ review.author }} on {{ review.date_review|date:"F dS, Y" }}</i></p>
+            <p class="lead"><i>{{ review.comment }}</i></p>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <h4>Add a review</h4>
+        
+        <form action="{% url 'blog:article' article.id %}" method="POST">
+            {% csrf_token %}
+
+            <div id="add-review">
+                <p class="lead">Rate<br>{{ form.notation }}</p>
+                <p class="lead">Title<br>{{ form.title_review }}</p>
+                <p class="lead">Comments<br>{{ form.comment }}</p>
+            </div>
+
+            <input type="submit" value="Eat me 🍕">
+        </form>
+    </div>  
 
 {% endblock %}

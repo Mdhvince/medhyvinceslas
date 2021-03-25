@@ -17,7 +17,7 @@
                         {% for tag in bp.tags.names %}
                             <button class="tags">{{ tag }}</button>
                         {% endfor %}
-                        <br><br><a href="{% url 'article' bp.id %}" class="btn btn-dark btn-sm">Read More</a>
+                        <br><br><a href="{% url 'blog:article' bp.id %}" class="btn btn-dark btn-sm">Read More</a>
                     </div>
                 </div>
         

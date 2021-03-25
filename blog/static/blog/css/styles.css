@@ -47,6 +47,7 @@ footer{
     color: rgb(185, 182, 182);
     text-align: right;
     margin-bottom: 20px;
+    font-size: 15px;
     /* background-color: red; */
 }
 .reviews{
@@ -74,4 +75,18 @@ footer{
     justify-content: space-around;
     /* background-color: red; */
     margin-bottom: 200px;
+}
+
+header span {
+    color: white;
+    width: 200px;
+}
+header a{
+    color: white;
+    width: 200px;
+}
+
+#add-review{
+    display: flex;
+    flex-direction: column;
 }

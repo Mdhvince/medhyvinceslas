@@ -1,0 +1,74 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block cssfile %}
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/forms.css' %}"/>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container"><h3>Register</h3></div>
+    
+    <div class="container register-form">
+        <form method="POST" action="{% url 'account:register' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2 lead">{{ form.username.label }}</div>
+                <div class="col-md-auto">{{ form.username }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2"></div>
+                <small class="col-md-auto text-muted">{{ form.username.help_text }}</small>
+            </div><br>
+            
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2 lead">{{ form.email.label }}</div>
+                <div class="col-md-auto">{{ form.email }}</div>
+            </div><br>
+            
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2 lead">{{ form.password1.label }}</div>
+                <div class="col-md-auto">{{ form.password1 }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2"></div>
+                <small class="col-md-auto text-muted">{{ form.password1.help_text }}</small>
+            </div>
+
+            
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2 lead">{{ form.password2.label }}</div>
+                <div class="col-md-auto">{{ form.password2 }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-2"></div>
+                <small class="col-md-auto text-muted">{{ form.password2.help_text }}</small>
+            </div><br>
+
+            <div class="row">
+                <div class="col col-lg-4"></div>
+                <div class="col col-lg-2"></div>
+                <input class="col-md-auto lead" type="submit" name="Create User">
+            </div>
+
+            <div class="row">
+                <div class="col col-lg-4"></div>
+                <div class="col col-lg-4">{{form.errors}}</div>
+            </div>
+            
+            
+            
+            
+        </form>
+    </div>
+
+{% endblock %}

@@ -24,6 +24,9 @@ class Review(models.Model):
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=-1)
 
+    def __str__(self) -> str:
+        return f"{self.title_review}: from @{self.author}"
+        
     # 1NF 2NF 3NF
 
 
