@@ -12,7 +12,9 @@ def index(request):
     })
 
 def article(request, article_id):
-    article = BlogPost.objects.values('title', 'content', 'publication_date').get(pk=article_id)
+    article = BlogPost.objects.get(pk=article_id)
+    reviews = article.review_set.all()
     return render(request, app_name / "article.html", {
-        "article": article
+        "article": article,
+        "reviews": reviews
     })

@@ -8,8 +8,18 @@
 
         <div class="container">
             {{ article.content | safe }}
-            <p class="lead sign"><i>Medhy, on {{ article.publication_date | safe }}</i></p>
+            <p class="lead sign"><i>{{ article.publication_date|date:"F dS, Y" }}</i></p>
         </div>
+
+        <div class="container reviews">
+            {% for review in reviews %}
+                <h5>{{ review.title_review }}</h5>
+                {{review.notation}}
+                <p class="text-muted"><i>@{{ review.author }} on {{ review.date_review|date:"F dS, Y" }}</i></p>
+                <p class="lead"><i>{{ review.comment }}</i></p>
+            {% endfor %}
+        </div>
+
 
     </main>
 

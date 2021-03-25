@@ -1,15 +1,10 @@
 
 
 header{
-    margin-top: 0;
     margin-bottom: 60px;
 }
 footer{
-    margin-top: 60px;
-    margin-bottom: 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    height: 200px;
 }
 .tab {
     margin-left: 50px;
@@ -51,8 +46,14 @@ footer{
 .sign{
     color: rgb(185, 182, 182);
     text-align: right;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     /* background-color: red; */
+}
+.reviews{
+    margin-bottom: 80px;
+}
+.reviews p{
+    font-size: 15px;
 }
 
 #title_article{
@@ -72,4 +73,5 @@ footer{
     flex-wrap: wrap;
     justify-content: space-around;
     /* background-color: red; */
+    margin-bottom: 200px;
 }

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 
 # Create your models here.    
@@ -19,8 +20,9 @@ class Review(models.Model):
     title_review = models.CharField(max_length=60)
     date_review = models.DateField(auto_now=True)
     comment = models.TextField()
-    notation = models.IntegerChoices('Notation', '1 2 3 4 5')
+    notation = models.IntegerField(choices=[(1, 1), (2, 2), (3, 3), (4, 4), (5, 5)])
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=-1)
 
     # 1NF 2NF 3NF
 
