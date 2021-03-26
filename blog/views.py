@@ -6,11 +6,10 @@ from django.urls import reverse
 from .models import BlogPost, Review
 from .forms import ReviewForm
 
-app_name = Path("blog")
 # Create your views here.
 def index(request):
     blogposts = BlogPost.objects.all().order_by("-publication_date")
-    return render(request, app_name / "index.html", {
+    return render(request, "blog/index.html", {
         "blogposts": blogposts
     })
 
@@ -28,7 +27,7 @@ def article(request, article_id):
 
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('blog:article', args=(article_id,)))
+            return HttpResponseRedirect(reverse('article', args=(article_id,)))
 
     context = {"form": form, "article": article, "reviews": reviews}
-    return render(request, app_name / "article.html", context)
+    return render(request, "blog/article.html", context)

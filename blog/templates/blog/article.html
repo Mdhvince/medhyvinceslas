@@ -25,7 +25,7 @@
     <div class="container">
         <h4>Add a review</h4>
         
-        <form action="{% url 'blog:article' article.id %}" method="POST">
+        <form action="{% url 'article' article.id %}" method="POST">
             {% csrf_token %}
 
             <div id="add-review">

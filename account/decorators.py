@@ -4,7 +4,7 @@ from django.urls import reverse
 def unauthenticated_only(view_func):
     def inner(request, *args, **kwargs):
         if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('blog:index'))
+            return HttpResponseRedirect(reverse('index_blog'))
         return view_func(request, *args, **kwargs)
     
     return inner

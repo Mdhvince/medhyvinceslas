@@ -14,17 +14,17 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'blog:index' %}">
+                <a class="navbar-brand" href="{% url 'index_blog' %}">
                     <img src="{% static 'blog/pizza.png' %}" alt="" width="30">
                 </a>
             </div>
 
             {% if request.user.is_authenticated %}
                 <span>Welcome, {{ request.user }}</span>
-                <span><a href="{% url 'account:logout' %}">Log out</a></span>
+                <span><a href="{% url 'logout' %}">Log out</a></span>
             {% else %}
                 <span>
-                    <a href="{% url 'account:login' %}">Log in</a> | <a href="{% url 'account:register' %}">Sign up</a>
+                    <a href="{% url 'login' %}">Log in</a> | <a href="{% url 'register' %}">Sign up</a>
                 </span>
             {% endif %}
 
