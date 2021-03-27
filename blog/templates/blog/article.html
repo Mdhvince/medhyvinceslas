@@ -4,27 +4,24 @@
 
     <main>
         <h2 id="title_article">{{ article.title }}</h2>
-        
-
-        <div class="container">
-            {{ article.content | safe }}
-            <p class="lead sign"><i>Last update - {{ article.publication_date|date:"F dS, Y" }}</i></p>
-        </div>
+        {{ article.content | safe }}
+        <p class="lead sign"><i>Last update - {{ article.publication_date|date:"F dS, Y" }}</i></p>
     </main>
 
-    <div class="container reviews">
+    <section class="reviews">
         {% for review in reviews %}
             <hr>
             <h5>{{ review.title_review }}</h5>
             {{review.notation}}
             <p class="text-muted"><i>@{{ review.author }} on {{ review.date_review|date:"F dS, Y" }}</i></p>
             <p class="lead"><i>{{ review.comment }}</i></p>
+        {% empty %}
+            <p class="lead">Be the first to add a review ⬇️🔥</p>
         {% endfor %}
-    </div>
+    </section>
 
-    <div class="container">
+    <section>
         <h4>Add a review</h4>
-        
         <form action="{% url 'article' article.id %}" method="POST">
             {% csrf_token %}
 
@@ -36,6 +33,6 @@
 
             <input type="submit" value="Eat me 🍕">
         </form>
-    </div>  
+    </section>
 
 {% endblock %}

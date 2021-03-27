@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgb(241, 241, 241);
+}
 
 header{
     margin-bottom: 60px;
@@ -12,15 +14,6 @@ footer{
 .title_page{
     margin: 50px;
     /* background-color: red; */
-}
-.tags{
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    font-size: 10px;
-    border-radius: 12px;
-    color: white;
-    background-color: rgb(19, 19, 20);
 }
 .cmd{
     padding: 5px;
@@ -50,6 +43,10 @@ footer{
     font-size: 15px;
     /* background-color: red; */
 }
+.link-card, .link-card:hover{
+    text-decoration: none;
+    color: rgb(33, 37, 41); /*bootstrap dark*/
+}
 .reviews{
     margin-bottom: 80px;
 }
@@ -75,6 +72,9 @@ footer{
     justify-content: space-around;
     /* background-color: red; */
     margin-bottom: 200px;
+}
+.card{
+    margin-bottom: 50px;
 }
 
 header span {

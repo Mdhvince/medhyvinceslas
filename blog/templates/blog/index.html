@@ -8,17 +8,19 @@
     <main>
         <div id="cards">
             {% for bp in blogposts %}
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 25rem;">
+                    <a href="{% url 'article' bp.id %}" class="link-card">
                     <img src="{{ bp.image.url }}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="mt-2">{{ bp.title }}</h5>
                         <p class="lead">{{ bp.content | safe |truncatechars:200 }}</p>
                         <p class="text-muted">{{ bp.publication_date }}</p>
+                        
                         {% for tag in bp.tags.names %}
-                            <button class="tags">{{ tag }}</button>
+                            <span class="badge rounded-pill bg-dark">{{ tag }}</span>
                         {% endfor %}
-                        <br><br><a href="{% url 'article' bp.id %}" class="btn btn-dark btn-sm">Read More</a>
                     </div>
+                    </a>
                 </div>
         
 
